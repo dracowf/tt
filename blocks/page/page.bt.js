@@ -38,6 +38,11 @@ module.exports = function (bt) {
                                     charset: 'utf-8'
                                 },
                                 {
+                                    elem: 'meta',
+                                    name: 'viewport',
+                                    content: 'width=device-width, initial-scale=1.0">'
+                                },
+                                {
                                     elem: 'title',
                                     content: ctx.getParam('title')
                                 },

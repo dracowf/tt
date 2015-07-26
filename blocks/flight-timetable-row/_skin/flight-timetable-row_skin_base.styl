@@ -1,31 +1,15 @@
-.flight-timetable-row {
+flight-timetable-row_skin_base() {
     display: table-row-group;
 
-    &:hover {
-        outline: none;
-        border-color: #fbf8c9;
-        box-shadow: 0 0 10px #fcefa8;
-        background-color : #fdf4c2;
-    }
-}
+    //border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    //border-right: 1px solid rgba(0, 0, 0, 0.2);
 
-.flight-timetable-row_header {
-    flight-timetable-row_skin_base();
+    //height: 40px;
 
-    background-color : #fcff62;
-
-}
-
-.flight-timetable-row_dark {
-    flight-timetable-row_skin_base();
-
-    background-color : #bababa;
-
-}
-
-.flight-timetable-row_light {
-    flight-timetable-row_skin_base();
-
-    background-color : #ffffff;
-
+    -o-transition:.135s;
+    -ms-transition:.135s;
+    -moz-transition:.135s;
+    -webkit-transition:.135s;
+    /* ...and now for the proper property */
+    transition:.135s;
 }

@@ -4,7 +4,7 @@ module.exports = function (bt) {
         ctx.enableAutoInit();
         ctx.setTag('header');
 
-        ctx.setContent("?");
+        ctx.setContent("Yandex Logo");
 
     });
 

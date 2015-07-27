@@ -10,15 +10,15 @@ modules.define(
 
                 // Получаем параметр с DOM-нодой родителя.
 
-                if (!!params.parentNode) {
+                //if (!!params.parentNode) {
                     this._parentNode = params.parentNode;
-                }
+                //}
 
                 // Получаем Номер строки.
 
-                if (!!params.RowNumber) {
+                //if (!!params.RowNumber) {
                     this._RowNumber = params.RowNumber;
-                }
+                //}
 
                 // Получаем текущую DOM-ноду
 

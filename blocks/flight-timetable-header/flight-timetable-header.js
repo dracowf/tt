@@ -27,7 +27,7 @@ modules.define(
 
                 this._render();
 
-                // this._bindTo($(window), 'scroll', this._headerOnTop);
+                this._bindTo($(window), 'scroll', this._headerOnTop);
 
                 // здесь описываем то, что происходит сразу после создания инстанса класса
             },
@@ -38,19 +38,19 @@ modules.define(
 
             // Если прокрутили ниже шапки - прикрепляем, если выше, то снимаем фикс
 
-           /* _headerOnTop : function () {
-                /!*if ($(window).scrollTop() > this._innerOffsetTop) {
+           _headerOnTop : function () {
+                if ($(window).scrollTop() > this._parentNode.offset().top) {
                     if (!this._getState('hidden')) {
                         console.log("Поставил!");
                         this._setState('hidden')
                     }
                 } else {
                         if (this._getState('hidden')) {
-                            console.log("Да ладно?!");
+                            console.log("Снял");
                             this._removeState('hidden')
                         }
-                }*!/
-            },*/
+                }
+            },
 
             // инстанс-методы
         }, {

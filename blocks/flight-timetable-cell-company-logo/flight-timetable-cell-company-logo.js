@@ -6,6 +6,10 @@ modules.define(
             __constructor: function (params) {
                 this.__base.apply(this, arguments);
             }
+        }, {
+            getBlockName: function () {
+                return 'flight-timetable-cell-company-logo';
+            }
         });
         provide(FlightTimetableCellCompanyLogo);
 });

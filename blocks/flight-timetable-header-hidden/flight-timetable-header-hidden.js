@@ -6,8 +6,6 @@ modules.define(
             __constructor: function (params) {
                 this.__base.apply(this, arguments);
 
-                console.log(this.width);
-
                 // здесь описываем то, что происходит сразу после создания инстанса класса
             },
 

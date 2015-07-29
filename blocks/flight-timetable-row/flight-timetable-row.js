@@ -6,14 +6,26 @@ modules.define(
         'flight-timetable-cell-flight-type',
         'flight-timetable-cell-flight-number',
         'flight-timetable-cell-airline-company',
+        'flight-timetable-cell-aircraft-type',
+        'flight-timetable-cell-airport-destination',
+        'flight-timetable-cell-company-logo',
+        'flight-timetable-cell-flight-status',
+        'flight-timetable-cell-flight-note',
+        'flight-timetable-cell-plan-time'
     ],
     function (provide,
               inherit,
               YBlock,
               FlightTimetableCell,
               FlightTimetableCellFlightType,
-              FlightTimetableCellFlightNumber
-    ) {
+              FlightTimetableCellFlightNumber,
+              FlightTimetableCellAirlineCompany,
+              FlightTimetableCellCompanyLogo,
+              FlightTimetableCellAircraftType,
+              FlightTimetableCellAirportDestinantion,
+              FlightTimetableCellFlightPlanTime,
+              FlightTimetableCellFlightStatus,
+              FlightTimetableCellFlightNote) {
         var FlightTimetableRow = inherit(YBlock, {
             __constructor: function (params) {
                 this.__base.apply(this, arguments);
@@ -48,7 +60,7 @@ modules.define(
 
                 // Создаём ячейку: Авиакомпания
 
-                this._cellAirlineCompany = new FlightTimetableCell({
+                this._cellAirlineCompany = new FlightTimetableCellAirlineCompany({
                     parentNode: rowDomNode,
                     _nameOfCell: '_cellAirlineCompany',
                     text: 'Airline Company'
@@ -56,7 +68,7 @@ modules.define(
 
                 // Создаём ячейку: Логотоип авиакомпании
 
-                this._cellCompanyLogo = new FlightTimetableCell({
+                this._cellCompanyLogo = new FlightTimetableCellCompanyLogo({
                     parentNode: rowDomNode,
                     _nameOfCell: '_cellCompanyLogo',
                     text: 'Company Logo'
@@ -64,7 +76,7 @@ modules.define(
 
                 // Создаём ячейку: Тип воздушного судна
 
-                this._cellAircraftType = new FlightTimetableCell({
+                this._cellAircraftType = new FlightTimetableCellAircraftType({
                     parentNode: rowDomNode,
                     _nameOfCell: '_cellAircraftType',
                     text: 'Aircraft Type'
@@ -72,15 +84,15 @@ modules.define(
 
                 // Создаём ячейку: Аэропорт назначения
 
-                this._cellAirportDest = new FlightTimetableCell({
+                this._cellAirportDestinantion = new FlightTimetableCellAirportDestinantion({
                     parentNode: rowDomNode,
-                    _nameOfCell: '_cellAirportDest',
+                    _nameOfCell: '_cellAirportDestinantion',
                     text: 'Airport Destination'
                 });
 
                 // Создаём ячейку: Плановое время
 
-                this._cellFlightPlanTime = new FlightTimetableCell({
+                this._cellFlightPlanTime = new FlightTimetableCellFlightPlanTime({
                     parentNode: rowDomNode,
                     _nameOfCell: '_cellFlightPlanTime',
                     text: 'Plan Time'
@@ -88,7 +100,7 @@ modules.define(
 
                 // Создаём ячейку: Статус рейчас
 
-                this._cellFlightStatus = new FlightTimetableCell({
+                this._cellFlightStatus = new FlightTimetableCellFlightStatus({
                     parentNode: rowDomNode,
                     _nameOfCell: '_cellFlightStatus',
                     text: 'Status'
@@ -96,7 +108,7 @@ modules.define(
 
                 // Создаём ячейку: Примечание
 
-                this._cellFlightNote = new FlightTimetableCell({
+                this._cellFlightNote = new FlightTimetableCellFlightNote({
                     parentNode: rowDomNode,
                     _nameOfCell: '_cellFlightNote',
                     text: 'Note'
@@ -125,7 +137,7 @@ modules.define(
             // статические методы
 
             _liveInit: function () {
-                this._liveBind('click', function(e) {
+                this._liveBind('click', function (e) {
                     this._clickOnRow();
                 });
             },

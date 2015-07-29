@@ -47,10 +47,10 @@ modules.define(
             _isOnTop: function () {
                 //console.log(this._thisDomNode.offset().top);
                 if (this._thisDomNode.offset().top < $(window).scrollTop()) {
-                    this._header._setState('hidden');
+                    //this._header._setState('hidden');
                     this._headerD._setState('visible');
                 } else {
-                    this._header._removeState('hidden');
+                    //this._header._removeState('hidden');
                     this._headerD._removeState('visible');
                 }
             }

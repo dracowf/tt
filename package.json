@@ -32,9 +32,10 @@
     },
     "enb": {
         "sources": [
-            "blocks",
-            "core",
-            "pages"
+            "client/controllers",
+            "client/views",
+            "client/core",
+            "client/pages"
         ]
     }
 }

@@ -3,9 +3,9 @@ modules.define(
     ['inherit',
         'block',
         'timetable-cell',
+        'timetable-cell-airline-company',
         'timetable-cell-flight-type',
         'timetable-cell-flight-number',
-        'timetable-cell-airline-company',
         'timetable-cell-company-logo',
         'timetable-cell-aircraft-type',
         'timetable-cell-airport-destination',
@@ -17,9 +17,9 @@ modules.define(
               inherit,
               YBlock,
               TimetableCell,
+              TimetableCellAirlineCompany,
               TimetableCellFlightType,
               TimetableCellFlightNumber,
-              TimetableCellAirlineCompany,
               TimetableCellCompanyLogo,
               TimetableCellAircraftType,
               TimetableCellAirportDestination,
@@ -75,6 +75,15 @@ modules.define(
                 this.dataNote = params.note;
 
 
+                // Создаём ячейку: Авиакомпания
+
+                this._cellAirlineCompany = new TimetableCellAirlineCompany({
+                    parentNode: rowDomNode,
+                    _nameOfCell: '_cellAirlineCompany',
+                    text: 'Airline Company',
+                    dataCompanyLogo: this.dataCompanyLogo,
+                    dataAirlineCompany: this.dataAirlineCompany
+                });
 
 
                 // Создаём ячейку: Тип полёта (вылет или прилёт)
@@ -98,10 +107,10 @@ modules.define(
                 // Создаём ячейку: Авиакомпания
 
                 /*this._cellAirlineCompany = new TimetableCellAirlineCompany({
-                    parentNode: rowDomNode,
-                    _nameOfCell: '_cellAirlineCompany',
-                    text: 'Airline Company'
-                });*/
+                 parentNode: rowDomNode,
+                 _nameOfCell: '_cellAirlineCompany',
+                 text: 'Airline Company'
+                 });*/
 
                 // Создаём ячейку: Логотоип авиакомпании
 

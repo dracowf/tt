@@ -12,8 +12,6 @@ modules.define(
             __constructor: function () {
                 this.__base.apply(this, arguments);
 
-                console.log("Дошёл!");
-
                 this._thisDomNode = this.getDomNode();
 
                 // здесь описываем то, что происходит сразу после создания инстанса класса
@@ -40,7 +38,6 @@ modules.define(
                 // Слушаем скролл
 
                 this._bindTo($(window), 'scroll', this._isOnTop);
-
 
             },
 

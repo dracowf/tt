@@ -155,7 +155,7 @@ modules.define(
                     _nameOfCell: '_cellFlightStatus',
                     text: 'Status',
                     dataFlightStatus: this.dataFlightStatus,
-                    dataRealTime: this.dataPlanTime,
+                    dataRealTime: this.dataRealTime,
                     dataNote: this.dataNote
                 });
 

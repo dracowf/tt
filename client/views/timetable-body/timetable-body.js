@@ -37,12 +37,12 @@ modules.define(
                             view: 'light',
                             RowNumber: i,
                             flightNumber: 'SU ' + number + i,
-                            planTime: '0' + d.getHours().toString() + ':' + (Number(d.getMinutes())+i).toString(),
+                            planTime: d.getHours().toString() + ':' + (Number(d.getMinutes())+i).toString(),
                             aircraftType: type,
                             CompanyLogo: 'Aloha',
                             AirlineCompany: 'British Airways',
                             flightStatus: 'Canceled',
-                            realTime: '0' + d.getHours().toString() + ':' + (Number(d.getMinutes())+i+10).toString(),
+                            realTime: d.getHours().toString() + ':' + (Number(d.getMinutes())+i+1).toString(),
                             note: 'Gate 5'
                         }));
                         this._rowsD.push(new TimetableRowDetailed({
@@ -56,12 +56,12 @@ modules.define(
                             view: 'dark',
                             RowNumber: i,
                             flightNumber: 'SU ' + number + i,
-                            planTime: '0' + d.getHours().toString() + ':' + (Number(d.getMinutes())+i).toString(),
+                            planTime: d.getHours().toString() + ':' + (Number(d.getMinutes())+i).toString(),
                             aircraftType: type,
                             CompanyLogo: 'Aloha',
                             AirlineCompany: 'British Airways',
                             flightStatus: 'Canceled',
-                            realTime: '0' + d.getHours().toString() + ':' + (Number(d.getMinutes())+i+10).toString(),
+                            realTime: d.getHours().toString() + ':' + (Number(d.getMinutes())+i+1).toString(),
                             note: 'Gate 5'
                         }));
                         this._rowsD.push(new TimetableRowDetailed({

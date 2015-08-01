@@ -1,18 +1,15 @@
 module.exports = function (bt) {
 
-    bt.match('layout-view', function (ctx) {
+    bt.match('timetable-view', function (ctx) {
         ctx.enableAutoInit();
         ctx.setTag('div');
 
         ctx.setContent([
             {
-                block: 'choose-view'
+                block: 'timetable-control-panel'
             },
             {
-                block: 'info-view'
-            },
-            {
-                block: 'timetable-view'
+                block: 'timetable-main-layout'
             }
         ]);
     });

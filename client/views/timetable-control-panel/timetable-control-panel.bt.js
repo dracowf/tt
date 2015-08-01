@@ -1,10 +1,9 @@
 module.exports = function (bt) {
 
-    bt.match('choose-view', function (ctx) {
+    bt.match('timetable-control-panel', function (ctx) {
         ctx.enableAutoInit();
         ctx.setTag('div');
-
-        ctx.setContent('Страна и город');
+        ctx.setContent('Control Panel');
     });
 
 };

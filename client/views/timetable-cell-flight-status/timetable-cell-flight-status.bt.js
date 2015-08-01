@@ -1,10 +1,8 @@
 module.exports = function (bt) {
 
-    bt.match('choose-view', function (ctx) {
+    bt.match('timetable-cell-flight-status', function (ctx) {
         ctx.enableAutoInit();
         ctx.setTag('div');
-
-        ctx.setContent('Страна и город');
     });
 
 };

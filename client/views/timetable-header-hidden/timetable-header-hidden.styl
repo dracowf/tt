@@ -1,27 +1,22 @@
-@media only screen and (max-width: 750px) {
-    .timetable-header-hidden {
-        display: none;
+.timetable-header-hidden {
+    display: none;
 
-        &._visible {
-            display: table-header-group;
-            position: fixed;
-            width: inherit;
-            //max-width: 75%;
-            top: 0px;
-        }
+    &._visible {
+        display: table-header-group;
+        position: fixed;
+        width: inherit;
+        top: 0px;
+
+        background-color: black;
+
     }
 }
 
-@media only screen and (min-width: 751px) {
+@media only screen and (min-width: 801px) {
     .timetable-header-hidden {
-        display: none;
 
         &._visible {
-            display: table-header-group;
-            position: fixed;
-            width: inherit;
             max-width: 75%;
-            top: 0px;
         }
     }
 }

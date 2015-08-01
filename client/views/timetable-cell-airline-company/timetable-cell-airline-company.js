@@ -18,13 +18,13 @@ modules.define(
 
                 // Создаем элемент лого компании
 
-                this._CompanyLogo = this._createElement({
+                this._companyLogo = this._createElement({
                     elem: 'logo'
                 });
 
                 // Создаем элемент название компании
 
-                this._AirlineCompany = this._createElement({
+                this._companyName = this._createElement({
                     elem: 'name'
                 });
 
@@ -37,13 +37,13 @@ modules.define(
             },
 
             _renderCompanyLogo: function () {
-                this._CompanyLogo.appendTo(this.getDomNode());
-                this._CompanyLogo.text(this._dataCompanyLogo);
+                this._companyLogo.appendTo(this.getDomNode());
+                this._companyLogo.text(this._dataCompanyLogo);
             },
 
             _renderAirlineCompany: function () {
-                this._AirlineCompany.appendTo(this.getDomNode());
-                this._AirlineCompany.text(this._dataAirlineCompany);
+                this._companyName.appendTo(this.getDomNode());
+                this._companyName.text(this._dataAirlineCompany);
             }
         }, {
             getBlockName: function () {

@@ -1,8 +1,9 @@
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 800px) {
     .timetable-cell-company-logo {
         display: table-cell;
         text-align: center;
-        width: 40em;
+        position:relative
+        width: 12em;
 
         // чтобы под бордером не было белого фона
         background-clip: padding-box;
@@ -15,37 +16,31 @@
         transition: .135s;
 
         &__flight-type {
+            width: 18px;
+            height 15px;
             background: url('images/plane' + '.svg') no-repeat;
             background-size: 15px 15px;
-            margin-top: 3px;
-            padding-top: 15px;
-            padding-right: 15px;
+            margin-top: 1px;
+            position: absolute;
+
+            left: 50%;
+            margin-left: -45px;
             display: inline-block;
-            //padding-top: 40px;
         }
 
         &__flight-number {
-            /*background: url('images/plane' + '.svg') no-repeat;
-            background-size: 15px 15px;
-            margin-top: 3px;
-            padding-top: 15px;
-            padding-right: 15px;*/
             display: inline-block;
-            //padding-top: 40px;
+
         }
 
         &__plan-time {
-            //width: 50%;
-            //margin: 0 auto;
+
         }
 
         &__aircraft-type {
-            //display: none;
             color: #999;
-            //width: 50%;
-            //margin: 0 auto;
+
         }
-        #DAD9D8
 
         &._hover {
             outline: 0;
@@ -60,7 +55,7 @@
     }
 }
 
-@media only screen and (min-width: 751px) {
+@media only screen and (min-width: 801px) {
     .timetable-cell-company-logo {
         display: table-cell;
         text-align: center;

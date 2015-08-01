@@ -7,9 +7,9 @@
 - layout-view
 - choose-view
 - info-view
-- timetable-view
+- timetable-layout
 - timetable-control-panel
-- timetable-main-layout
+- timetable-table
 - timetable-header
 - timetable-header-hidden
 - timetable-body

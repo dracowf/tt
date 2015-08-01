@@ -1,8 +1,8 @@
 modules.define(
-    'timetable-view',
+    'timetable-layout',
     ['inherit', 'block'],
     function (provide, inherit, YBlock) {
-        var TimetableView = inherit(YBlock, {
+        var TimetableLayout = inherit(YBlock, {
             __constructor: function () {
                 this.__base.apply(this, arguments);
 
@@ -12,11 +12,11 @@ modules.define(
             // инстанс-методы
         }, {
             getBlockName: function () {
-                return 'timetable-view';
+                return 'timetable-layout';
             }
 
             // статические методы
         });
 
-        provide(TimetableView);
+        provide(TimetableLayout);
 });

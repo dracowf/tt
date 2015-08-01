@@ -12,7 +12,7 @@ module.exports = function (bt) {
                 block: 'info-view'
             },
             {
-                block: 'timetable-view'
+                block: 'timetable-layout'
             }
         ]);
     });

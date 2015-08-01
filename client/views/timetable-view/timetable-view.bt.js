@@ -1,6 +1,6 @@
 module.exports = function (bt) {
 
-    bt.match('timetable-view', function (ctx) {
+    bt.match('timetable-layout', function (ctx) {
         ctx.enableAutoInit();
         ctx.setTag('div');
 
@@ -9,7 +9,7 @@ module.exports = function (bt) {
                 block: 'timetable-control-panel'
             },
             {
-                block: 'timetable-main-layout'
+                block: 'timetable-table'
             }
         ]);
     });

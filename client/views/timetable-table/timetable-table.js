@@ -1,5 +1,5 @@
 modules.define(
-    'timetable-main-layout',
+    'timetable-table',
     ['inherit',
         'block',
         'timetable-header',
@@ -8,7 +8,7 @@ modules.define(
     ],
     function (provide, inherit, YBlock, TimetableHeader,
               TimetableHeaderHidden, TimetableBody) {
-        var TimetableMainLayout = inherit(YBlock, {
+        var TimetableTable = inherit(YBlock, {
             __constructor: function () {
                 this.__base.apply(this, arguments);
 
@@ -61,11 +61,11 @@ modules.define(
             // инстанс-методы
         }, {
             getBlockName: function () {
-                return 'timetable-main-layout';
+                return 'timetable-table';
             }
 
             // статические методы
         });
 
-        provide(TimetableMainLayout);
+        provide(TimetableTable);
     });

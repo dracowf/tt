@@ -1,6 +1,6 @@
 module.exports = function (bt) {
 
-    bt.match('timetable-main-layout', function (ctx) {
+    bt.match('timetable-table', function (ctx) {
         ctx.enableAutoInit();
         ctx.setTag('div');
         /*ctx.setContent([

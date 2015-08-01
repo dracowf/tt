@@ -4,7 +4,7 @@ module.exports = function (bt) {
         ctx.enableAutoInit();
         ctx.setTag('div');
 
-        ctx.setContent('Содержимое блока');
+        ctx.setContent('Инфо');
     });
 
 };

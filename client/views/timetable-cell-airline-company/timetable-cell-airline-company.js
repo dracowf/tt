@@ -7,43 +7,38 @@ modules.define(
                 this.__base.apply(this, arguments);
 
                 this._parentNode = params.parentNode;
-
-                // Получаем лого компании
-
-                this._dataCompanyLogo = params.dataCompanyLogo;
-
-                // Получаем название компании
-
-                this._dataAirlineCompany = params.dataAirlineCompany;
+                this._companyLogo = params.companyLogo;
+                this._companyName = params.companyName;
 
                 // Создаем элемент лого компании
 
-                this._companyLogo = this._createElement({
+                this._elemCompanyLogo = this._createElement({
                     elem: 'logo'
                 });
 
                 // Создаем элемент название компании
 
-                this._companyName = this._createElement({
+                this._elemCompanyName = this._createElement({
                     elem: 'name'
                 });
 
-                this._renderCompanyLogo();
-                this._renderAirlineCompany();
+                this._renderFieldCompanyLogo();
+                this._renderFieldCompanyName();
             },
 
             _render: function () {
                 this.getDomNode().appendTo(this._parentNode);
+                //this.getDomNode().text("Компания");
             },
 
-            _renderCompanyLogo: function () {
-                this._companyLogo.appendTo(this.getDomNode());
-                this._companyLogo.text(this._dataCompanyLogo);
+            _renderFieldCompanyLogo: function () {
+                this._elemCompanyLogo.appendTo(this.getDomNode());
+                this._elemCompanyLogo.text(this._companyLogo);
             },
 
-            _renderAirlineCompany: function () {
-                this._companyName.appendTo(this.getDomNode());
-                this._companyName.text(this._dataAirlineCompany);
+            _renderFieldCompanyName: function () {
+                this._elemCompanyName.appendTo(this.getDomNode());
+                this._elemCompanyName.text(this._companyName);
             }
         }, {
             getBlockName: function () {

@@ -35,12 +35,12 @@ modules.define(
                         this._rows.push(new TimetableRow({
                             parentNode: this._thisDomNode,
                             view: 'light',
-                            RowNumber: i,
+                            rowNumber: i,
                             flightNumber: 'SU ' + number + i,
                             planTime: d.getHours().toString() + ':' + (Number(d.getMinutes())+i).toString(),
                             aircraftType: type,
-                            CompanyLogo: 'Aloha',
-                            AirlineCompany: 'British Airways',
+                            companyLogo: 'Aloha',
+                            companyName: 'British Airways',
                             flightStatus: 'Canceled',
                             realTime: d.getHours().toString() + ':' + (Number(d.getMinutes())+i+1).toString(),
                             note: 'Gate 5'
@@ -48,18 +48,18 @@ modules.define(
                         this._rowsD.push(new TimetableRowDetailed({
                             parentNode: this._thisDomNode,
                             //view: 'hide',
-                            RowNumber: i
+                            rowNumber: i
                         }));
                     } else {
                         this._rows.push(new TimetableRow({
                             parentNode: this._thisDomNode,
                             view: 'dark',
-                            RowNumber: i,
+                            rowNumber: i,
                             flightNumber: 'SU ' + number + i,
                             planTime: d.getHours().toString() + ':' + (Number(d.getMinutes())+i).toString(),
                             aircraftType: type,
-                            CompanyLogo: 'Aloha',
-                            AirlineCompany: 'British Airways',
+                            companyLogo: 'Aloha',
+                            companyName: 'British Airways',
                             flightStatus: 'Canceled',
                             realTime: d.getHours().toString() + ':' + (Number(d.getMinutes())+i+1).toString(),
                             note: 'Gate 5'
@@ -67,7 +67,7 @@ modules.define(
                         this._rowsD.push(new TimetableRowDetailed({
                             parentNode: this._thisDomNode,
                             //view: 'hide',
-                            RowNumber: i
+                            rowNumber: i
                         }));
                     }
 

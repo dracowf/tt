@@ -3,6 +3,7 @@ modules.define(
     ['inherit',
         'block',
         'timetable-cell',
+        'timetable-cell-header-airline-company',
         'timetable-cell-airline-company',
         'timetable-cell-flight-type',
         'timetable-cell-flight-number',
@@ -17,6 +18,7 @@ modules.define(
               inherit,
               YBlock,
               TimetableCell,
+              TimetableCellHeaderAirlineCompany,
               TimetableCellAirlineCompany,
               TimetableCellFlightType,
               TimetableCellFlightNumber,
@@ -34,9 +36,13 @@ modules.define(
 
                 this._parentNode = params.parentNode;
 
+                // Получаем view
+
+                this._view = params.view;
+
                 // Получаем Номер строки.
 
-                this._RowNumber = params.RowNumber;
+                this._rowNumber = params.rowNumber;
 
                 // Получаем текущую DOM-ноду
 
@@ -44,11 +50,11 @@ modules.define(
 
                 // Получаем тип самолёта
 
-                this.dataCompanyLogo = params.CompanyLogo;
+                this.companyLogo = params.companyLogo;
 
                 // Получаем тип самолёта
 
-                this.dataAirlineCompany = params.AirlineCompany;
+                this.companyName = params.companyName;
 
                 // Получаем номер рейса
 
@@ -77,14 +83,18 @@ modules.define(
 
                 // Создаём ячейку: Авиакомпания
 
-                this._cellAirlineCompany = new TimetableCellAirlineCompany({
-                    parentNode: rowDomNode,
-                    _nameOfCell: '_cellAirlineCompany',
-                    text: 'Airline Company',
-                    dataCompanyLogo: this.dataCompanyLogo,
-                    dataAirlineCompany: this.dataAirlineCompany
-                });
-
+                if (this._view == 'header') {
+                    this._cellAirlineCompany = new TimetableCellHeaderAirlineCompany({
+                        parentNode: rowDomNode,
+                    });
+                } else {
+                    this._cellAirlineCompany = new TimetableCellAirlineCompany({
+                        parentNode: rowDomNode,
+                        _nameOfCell: '_cellAirlineCompany',
+                        companyLogo: this.companyLogo,
+                        companyName: this.companyName
+                    });
+                }
 
                 // Создаём ячейку: Тип полёта (вылет или прилёт)
 
@@ -101,7 +111,7 @@ modules.define(
                     _nameOfCell: '_cellFlightNumber',
                     text: 'Flight Number',
                     dataCompanyLogo: this.dataCompanyLogo,
-                    dataAirlineCompany: this.dataAirlineCompany
+                    dataCompanyName: this.dataCompanyName
                 });
 
                 // Создаём ячейку: Авиакомпания
@@ -183,7 +193,7 @@ modules.define(
 
             _clickOnRow: function () {
                 //console.log("На мне кликнули ", this._RowNumber);
-                this.emit('click-on-row', this._RowNumber);
+                this.emit('click-on-row', this._rowNumber);
             }
 
         }, {

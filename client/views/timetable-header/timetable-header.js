@@ -27,7 +27,7 @@ modules.define(
                     planTime: 'Время',
                     aircraftType: 'Борт',
                     //CompanyLogo: 'Логотип компании',
-                    AirlineCompany: 'Компания',
+                    //AirlineCompany: 'Компания',
                     flightStatus: 'Статус',
                     realTime: 'Время2',
                     note: 'Доп.инфа'

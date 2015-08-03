@@ -1,8 +1,8 @@
 modules.define(
-    'timetable-cell-company-logo',
+    'timetable-cell-general-info',
     ['inherit', 'timetable-cell'],
     function (provide, inherit, TimetableCell) {
-        var TimetableCellCompanyLogo = inherit(TimetableCell, {
+        var TimetableCellGeneralInfo = inherit(TimetableCell, {
             __constructor: function (params) {
                 this.__base.apply(this, arguments);
 
@@ -79,9 +79,9 @@ modules.define(
              }
         }, {
             getBlockName: function () {
-                return 'timetable-cell-company-logo';
+                return 'timetable-cell-general-info';
             }
         });
-        provide(TimetableCellCompanyLogo);
+        provide(TimetableCellGeneralInfo);
 });
 

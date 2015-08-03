@@ -3,14 +3,18 @@ modules.define(
     ['inherit', 'timetable-cell'],
     function (provide, inherit, TimetableCell) {
         var TimetableCellFlightNote = inherit(TimetableCell, {
-            __constructor: function (params) {
-                this.__base.apply(this, arguments);
-            }
-        }, {
-            getBlockName: function () {
-                return 'timetable-cell-flight-note';
-            }
-        });
+                __constructor: function (params) {
+                    this.__base.apply(this, arguments);
+
+                }
+            },
+            {
+
+                getBlockName: function () {
+                    return 'timetable-cell-flight-note';
+
+                }
+            });
         provide(TimetableCellFlightNote);
-});
+    });
 

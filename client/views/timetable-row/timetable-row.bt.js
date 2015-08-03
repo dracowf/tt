@@ -5,7 +5,7 @@ module.exports = function (bt) {
         ctx.setTag('div');
 /*        ctx.setContent([
             {
-                block: 'timetable-cell-flight-type',
+                block: 'timetable-cell-general-info',
             },
             {
                 block: 'timetable-cell-flight-number',

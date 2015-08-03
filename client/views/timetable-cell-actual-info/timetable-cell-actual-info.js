@@ -1,8 +1,8 @@
 modules.define(
-    'timetable-cell-flight-status',
+    'timetable-cell-actual-info',
     ['inherit', 'timetable-cell'],
     function (provide, inherit, TimetableCell) {
-        var TimetableCellFlightStatus = inherit(TimetableCell, {
+        var TimetableCellActualInfo = inherit(TimetableCell, {
             __constructor: function (params) {
                 this.__base.apply(this, arguments);
 
@@ -46,6 +46,10 @@ modules.define(
                 this._renderNote();
             },
 
+            _render: function () {
+                this.getDomNode().appendTo(this._parentNode);
+            },
+
             _renderFlightStatus: function () {
                 this._flightStatus.appendTo(this.getDomNode());
                 this._flightStatus.text(this._dataFlightStatus);
@@ -62,9 +66,9 @@ modules.define(
             }
         }, {
             getBlockName: function () {
-                return 'timetable-cell-flight-status';
+                return 'timetable-cell-actual-info';
             }
         });
-        provide(TimetableCellFlightStatus);
+        provide(TimetableCellActualInfo);
 });
 

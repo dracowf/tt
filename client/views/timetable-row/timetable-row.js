@@ -5,13 +5,14 @@ modules.define(
         'timetable-cell',
         'timetable-cell-header-airline-company',
         'timetable-cell-airline-company',
-        'timetable-cell-flight-type',
+        'timetable-cell-general-info',
+        'timetable-cell-actual-info',
         'timetable-cell-flight-number',
-        'timetable-cell-company-logo',
         'timetable-cell-aircraft-type',
         'timetable-cell-airport-destination',
         'timetable-cell-plan-time',
         'timetable-cell-flight-status',
+        'timetable-cell-actual-time',
         'timetable-cell-flight-note'
     ],
     function (provide,
@@ -20,14 +21,16 @@ modules.define(
               TimetableCell,
               TimetableCellHeaderAirlineCompany,
               TimetableCellAirlineCompany,
-              TimetableCellFlightType,
+              TimetableCellGeneralInfo,
+              TimetableCellActualInfo,
               TimetableCellFlightNumber,
-              TimetableCellCompanyLogo,
               TimetableCellAircraftType,
               TimetableCellAirportDestination,
               TimetableCellFlightPlanTime,
               TimetableCellFlightStatus,
-              TimetableCellFlightNote) {
+              TimetableCellActualTime,
+              TimetableCellFlightNote
+    ) {
         var TimetableRow = inherit(YBlock, {
             __constructor: function (params) {
                 this.__base.apply(this, arguments);
@@ -85,7 +88,7 @@ modules.define(
 
                 if (this._view == 'header') {
                     this._cellAirlineCompany = new TimetableCellHeaderAirlineCompany({
-                        parentNode: rowDomNode,
+                        parentNode: rowDomNode
                     });
                 } else {
                     this._cellAirlineCompany = new TimetableCellAirlineCompany({
@@ -95,14 +98,6 @@ modules.define(
                         companyName: this.companyName
                     });
                 }
-
-                // Создаём ячейку: Тип полёта (вылет или прилёт)
-
-                this._cellFlightType = new TimetableCellFlightType({
-                    parentNode: rowDomNode,
-                    _nameOfCell: '_cellFlightType',
-                    text: 'Flight Type'
-                });
 
                 // Создаём ячейку: Номер рейса
 
@@ -114,40 +109,15 @@ modules.define(
                     dataCompanyName: this.dataCompanyName
                 });
 
-                // Создаём ячейку: Авиакомпания
+                // Создаём ячейку: Основная информация
 
-                /*this._cellAirlineCompany = new TimetableCellAirlineCompany({
-                 parentNode: rowDomNode,
-                 _nameOfCell: '_cellAirlineCompany',
-                 text: 'Airline Company'
-                 });*/
-
-                // Создаём ячейку: Логотоип авиакомпании
-
-                this._cellCompanyLogo = new TimetableCellCompanyLogo({
+                this._cellGeneralInfo = new TimetableCellGeneralInfo({
                     parentNode: rowDomNode,
-                    _nameOfCell: '_cellCompanyLogo',
+                    _nameOfCell: '_cellGeneralInfo',
                     text: 'Company Logo',
                     dataFlightNumber: this.dataFlightNumber,
                     dataPlanTime: this.dataPlanTime,
                     dataAircraftType: this.dataAircraftType
-
-                });
-
-                // Создаём ячейку: Тип воздушного судна
-
-                this._cellAircraftType = new TimetableCellAircraftType({
-                    parentNode: rowDomNode,
-                    _nameOfCell: '_cellAircraftType',
-                    text: 'Aircraft Type'
-                });
-
-                // Создаём ячейку: Аэропорт назначения
-
-                this._cellAirportDestination = new TimetableCellAirportDestination({
-                    parentNode: rowDomNode,
-                    _nameOfCell: '_cellAirportDestination',
-                    text: 'Airport Destination'
                 });
 
                 // Создаём ячейку: Плановое время
@@ -158,15 +128,47 @@ modules.define(
                     text: 'Plan Time'
                 });
 
+                // Создаём ячейку: Тип воздушного судна
+
+                this._cellAircraftType = new TimetableCellAircraftType({
+                    parentNode: rowDomNode,
+                    _nameOfCell: '_cellAircraftType',
+                    text: 'Aircraft Type'
+                });
+
+                // Создаём ячейку: Назначение
+
+                this._cellAirportDestination = new TimetableCellAirportDestination({
+                    parentNode: rowDomNode,
+                    _nameOfCell: '_cellAirportDestination',
+                    text: 'Airport Destination'
+                });
+
                 // Создаём ячейку: Статус рейчас
 
                 this._cellFlightStatus = new TimetableCellFlightStatus({
                     parentNode: rowDomNode,
                     _nameOfCell: '_cellFlightStatus',
-                    text: 'Status',
+                    text: 'Status'
+                });
+
+                // Создаём ячейку: Акутальная информация
+
+                this._cellActualInfo = new TimetableCellActualInfo({
+                    parentNode: rowDomNode,
+                    _nameOfCell: '_cellActualInfo',
+                    text: 'Actual Info',
                     dataFlightStatus: this.dataFlightStatus,
                     dataRealTime: this.dataRealTime,
                     dataNote: this.dataNote
+                });
+
+                // Создаём ячейку: Актуальное время
+
+                this._cellActualTime = new TimetableCellActualTime({
+                    parentNode: rowDomNode,
+                    _nameOfCell: '_cellActualTime',
+                    text: 'Actual Time'
                 });
 
                 // Создаём ячейку: Примечание

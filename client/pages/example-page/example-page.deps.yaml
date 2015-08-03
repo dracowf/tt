@@ -1,8 +1,5 @@
 - page
 - app-controller
-- form
-- input
-- y-layout
 - header-view
 - layout-view
 - choose-view
@@ -14,7 +11,7 @@
 - timetable-header-hidden
 - timetable-body
 - timetable-row
-- timetable-cell-flight-type
+- timetable-cell-general-info
 - timetable-cell-flight-number
 - timetable-cell-airline-company
 - timetable-cell-company-logo
@@ -23,3 +20,4 @@
 - timetable-cell-plan-time
 - timetable-cell-flight-status
 - timetable-cell-flight-note
+- timetable-cell-flight-note2

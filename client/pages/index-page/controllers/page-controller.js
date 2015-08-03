@@ -12,12 +12,12 @@ modules.define(
 
         var PageController = inherit({
             __constructor: function () {
-                console.log('example: PageController constructor');
+                console.log('index: PageController constructor');
                 //            ^-------------------------------------- index-page
             },
 
             start: function () {
-                console.log('example: PageController started');
+                console.log('index: PageController started');
                 //            ^-------------------------------------- index-page!
             }
         });

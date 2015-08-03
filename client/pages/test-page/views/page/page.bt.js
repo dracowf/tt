@@ -47,10 +47,10 @@ module.exports = function (bt) {
                                     content: ctx.getParam('title')
                                 },
                                 ctx.getParam('favicon') ?
-                                    {
-                                        elem: 'favicon',
-                                        url: ctx.getParam('favicon')
-                                    } :
+                                {
+                                    elem: 'favicon',
+                                    url: ctx.getParam('favicon')
+                                } :
                                     ''
                             ],
                             styleElements,
@@ -102,6 +102,7 @@ module.exports = function (bt) {
     bt.match('page__meta', function (ctx) {
         ctx.setTag('meta');
         ctx.disableCssClassGeneration();
+        ctx.setAttr('name', ctx.getParam('name'));
         ctx.setAttr('content', ctx.getParam('content'));
         ctx.setAttr('http-equiv', ctx.getParam('http-equiv'));
         ctx.setAttr('charset', ctx.getParam('charset'));

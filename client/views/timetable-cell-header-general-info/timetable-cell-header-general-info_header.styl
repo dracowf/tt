@@ -1,0 +1,80 @@
+.timetable-cell-header-general-info_header {
+    display: table-cell;
+    outline: 1px solid #ffffff;
+    text-align: center;
+    position: relative;
+    vertical-align: middle;
+    width: 10%;
+    background-clip: padding-box;
+
+    &__flight-type {
+        width: 18px;
+        height 15px;
+        background: url('images/plane' + '.svg') no-repeat;
+        background-size: 15px 15px;
+        margin-top: 1px;
+        position: absolute;
+        left: 50%;
+        margin-left: -50px;
+        display: inline-block;
+    }
+
+    &__flight-number {
+        display: inline-block;
+
+    }
+
+    &__plan-time {
+
+    }
+
+    &__aircraft-type {
+        color: #999;
+
+    }
+
+    &._hover {
+        outline: 0;
+        background: rgba(0, 255, 0, 0.2) none repeat scroll 0 0;
+    }
+
+}
+
+@media only screen and (min-width: 321px) {
+    //and (max-width: 480px){
+    .timetable-cell-header-general-info_header {
+        outline: 1px solid #07fffa;
+
+    }
+}
+
+@media only screen and (min-width: 481px) {
+    //and (max-width: 600px) {
+    .timetable-cell-header-general-info_header {
+        outline: 1px solid #ab7fff;
+
+    }
+}
+
+@media only screen and (min-width: 601px) {
+    //and (max-width: 800px) {
+    .timetable-cell-header-general-info_header {
+        outline: 1px solid #8ad0ff;
+
+    }
+}
+
+@media only screen and (min-width: 801px) {
+    //and (max-width: 1000px) {
+    .timetable-cell-header-general-info_header {
+        width: 20em;
+        outline: 1px solid #b7ff3f;
+
+    }
+}
+
+@media only screen and (min-width: 1001px) {
+    .timetable-cell-header-general-info_header {
+        outline: 1px solid #58b6ff;
+    }
+}

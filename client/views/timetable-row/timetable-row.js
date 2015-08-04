@@ -159,7 +159,7 @@ modules.define(
                     this._cellAirportDestination = new TimetableCellAirportDestination({
                         parentNode: rowDomNode,
                         //view: 'header',
-                        text: 'Калининград'
+                        text: 'Назначение / Отправление'
                         //text: 'City'
                     });
                 } else {

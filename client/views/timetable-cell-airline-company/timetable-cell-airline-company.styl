@@ -4,20 +4,24 @@
 
 }
 
-@media only screen and (min-width: 321px) {
+@media only screen and (min-width: 400px) {
     //and (max-width: 480px){
     .timetable-cell-airline-company {
 
         display: table-cell;
+        //position: relative;
 
         &__name {
             display: none;
         }
 
-        outline: 1px solid #91ff4f;
+        border: 1px solid #ffffff;
+
+        //border: 1px solid #ffffff;
+
         text-align: center;
         vertical-align: middle;
-        width: 10%;
+        width: 15%;
         background-clip: padding-box;
 
         -o-transition: .135s;
@@ -27,8 +31,8 @@
         transition: .135s;
 
         &._hover {
-            outline: 0;
-            background: rgba(0, 255, 0, 0.2) none repeat scroll 0 0;
+            background: rgba(224, 224, 224, 0.75) none repeat scroll 0 0;
+
         }
 
     }
@@ -37,7 +41,7 @@
 @media only screen and (min-width: 481px) {
     //and (max-width: 600px) {
     .timetable-cell-airline-company {
-        outline: 1px solid #ab7fff;
+       // outline: 1px solid #ab7fff;
 
         &__name {
             display: block;
@@ -49,7 +53,7 @@
 @media only screen and (min-width: 601px) {
     //and (max-width: 800px) {
     .timetable-cell-airline-company {
-        outline: 1px solid #8ad0ff;
+        //outline: 1px solid #8ad0ff;
 
     }
 }

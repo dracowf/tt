@@ -121,7 +121,7 @@ modules.define(
                     this._cellGeneralInfo = new TimetableCellGeneralInfo({
                         parentNode: rowDomNode,
                         view: 'header',
-                        text: 'Основная информация'
+                        text: 'Рейс'
                         //dataFlightNumber: 'Номер рейса',
                         //dataPlanTime: 'Время по расписанию',
                         //dataAircraftType: 'Тип самолёта'
@@ -158,8 +158,8 @@ modules.define(
                 if (this._view == 'header') {
                     this._cellAirportDestination = new TimetableCellAirportDestination({
                         parentNode: rowDomNode,
-                        //view: 'header',
-                        text: 'Назначение / Отправление'
+                        view: 'header',
+                        text: 'Направление'
                         //text: 'City'
                     });
                 } else {
@@ -185,7 +185,7 @@ modules.define(
                     this._cellActualInfo = new TimetableCellActualInfo({
                         parentNode: rowDomNode,
                         view: 'header',
-                        text: 'Актуальная информация'
+                        text: 'Статус'
                        /*dataFlightStatus: 'Статус рейса',
                         dataRealTime: 'Время по факту',
                         dataNote: 'Примечение'*/
@@ -208,13 +208,20 @@ modules.define(
                 });
 
                 // Создаём ячейку: Примечание
-
-                this._cellFlightNote = new TimetableCellFlightNote({
-                    parentNode: rowDomNode,
-                    _nameOfCell: '_cellFlightNote',
-                    text: 'Note'
-                });
-
+                if (this._view == 'header') {
+                    this._cellFlightNote = new TimetableCellFlightNote({
+                        parentNode: rowDomNode,
+                        view: 'header',
+                        _nameOfCell: '_cellFlightNote',
+                        text: 'Note'
+                    });
+                } else {
+                    this._cellFlightNote = new TimetableCellFlightNote({
+                        parentNode: rowDomNode,
+                        _nameOfCell: '_cellFlightNote',
+                        text: 'Note'
+                    });
+                }
                 // Рендеримся
 
                 this._render();

@@ -1,17 +1,18 @@
 .timetable-cell-general-info {
     display: table-cell;
-    outline: 1px solid #ffffff;
+    border: 1px solid #ffffff;
+
     text-align: center;
     position: relative;
+
     vertical-align: middle;
-    width: 33%;
+    width: 29%;
     background-clip: padding-box;
 
     -o-transition: .135s;
     -ms-transition: .135s;
     -moz-transition: .135s;
     -webkit-transition: .135s;
-    /* ...and now for the proper property */
     transition: .135s;
 
     &__flight-type {
@@ -22,7 +23,7 @@
         margin-top: 1px;
         position: absolute;
         left: 50%;
-        margin-left: -50px;
+        margin-left: -3em;
         display: inline-block;
     }
 
@@ -41,8 +42,8 @@
     }
 
     &._hover {
-        outline: 0;
-        background: rgba(0, 255, 0, 0.2) none repeat scroll 0 0;
+        background: rgba(224, 224, 224, 0.75) none repeat scroll 0 0;
+
     }
 
 }
@@ -50,23 +51,22 @@
 @media only screen and (min-width: 321px) {
     //and (max-width: 480px){
     .timetable-cell-general-info {
-        outline: 1px solid #07fffa;
-        width: 25%;
+        //outline: 1px solid #ffffff;
     }
 }
 
 @media only screen and (min-width: 481px) {
     //and (max-width: 600px) {
     .timetable-cell-general-info {
-        outline: 1px solid #ab7fff;
-        width: 12em;
+        //outline: 1px solid #ab7fff;
+        //width: 12em;
     }
 }
 
 @media only screen and (min-width: 601px) {
     //and (max-width: 800px) {
     .timetable-cell-general-info {
-        outline: 1px solid #8ad0ff;
+        //outline: 1px solid #8ad0ff;
 
     }
 }

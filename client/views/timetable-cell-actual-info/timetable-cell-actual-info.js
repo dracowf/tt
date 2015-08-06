@@ -49,6 +49,21 @@ modules.define(
             _renderFlightStatus: function () {
                 this._flightStatus.appendTo(this.getDomNode());
                 this._flightStatus.text(this._dataFlightStatus);
+                console.log(this._dataFlightStatus);
+                console.log(this._dataFlightStatus);
+                switch  (this._dataFlightStatus) {
+                    case 'Canceled':
+                        this._setState('canceled');
+                        break;
+                    case 'Delayed':
+                        this._setState('delayed');
+                        break;
+                    case 'Arrival':
+                        this._setState('arrival');
+                        break;
+                    default:
+                        this._flightStatus.text('--');
+                }
             },
 
             _renderRealTime: function () {

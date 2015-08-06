@@ -32,6 +32,20 @@ modules.define(
 
                 for (i = 0; i < 100; i++) {
                     if (i % 2 == 0) {
+                        var tempStatus;
+                        switch  (Math.floor(Math.random() * 3 + 1)) {
+                            case 1:
+                                tempStatus = 'Canceled';
+                                break;
+                            case 2:
+                                tempStatus = 'Delayed';
+                                break;
+                            case 3:
+                                tempStatus = 'Arrival';
+                                break;
+                            default:
+                                this._flightStatus.text('--');
+                        }
                         this._rows.push(new TimetableRow({
                             parentNode: this._thisDomNode,
                             view: 'light',
@@ -41,7 +55,7 @@ modules.define(
                             aircraftType: type,
                             companyLogo: 'Aloha',
                             companyName: 'British Airways',
-                            flightStatus: 'Canceled',
+                            flightStatus: tempStatus,
                             realTime: d.getHours().toString() + ':' + (Number(d.getMinutes()) + i + 1).toString(),
                             note: 'Gate 5'
                         }));
@@ -60,7 +74,7 @@ modules.define(
                             aircraftType: type,
                             companyLogo: 'Aloha',
                             companyName: 'British Airways',
-                            flightStatus: 'Canceled',
+                            flightStatus: tempStatus,
                             realTime: d.getHours().toString() + ':' + (Number(d.getMinutes()) + i + 1).toString(),
                             note: 'Gate 5'
                         }));
@@ -129,6 +143,7 @@ modules.define(
                 } else {
                     this._rowsD[e.data]._removeState('visible');
                     this._rows[e.data]._removeState('clicked');
+                    this._rows[e.data]._removeState('pushed');
                 }
             },
 
@@ -146,6 +161,7 @@ modules.define(
                             _row._removeState('pushed')
                         }
                     });
+
                     _row.on('dragstart-on-row', function () {
                         if (_row._getState('pushed')) {
                             _row._removeState('pushed')

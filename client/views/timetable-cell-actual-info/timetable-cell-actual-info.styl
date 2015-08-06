@@ -15,12 +15,31 @@
 
     }
 
+    &._canceled &__flight-status {
+        display: inline;
+        background-color: darkred;
+        color: white;
+    }
+
+    &._delayed &__flight-status {
+        display: inline;
+        background-color: #a5a500;
+        color: white;
+    }
+
+    &._arrival &__flight-status {
+        display: inline;
+        background-color: darkgreen;
+        color: white;
+    }
+
+
 }
 
 @media only screen and (min-width: 321px) {
     //and (max-width: 480px){
     .timetable-cell-actual-info {
-       // outline: 1px solid #07fffa;
+        // outline: 1px solid #07fffa;
 
     }
 }

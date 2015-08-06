@@ -235,10 +235,17 @@ modules.define(
             _render: function () {
                 this.getDomNode().appendTo(this._parentNode);
             },
-
             _clickOnRow: function () {
-                //console.log("На мне кликнули ", this._RowNumber);
                 this.emit('click-on-row', this._rowNumber);
+            },
+            _mousedownOnRow: function () {
+                this.emit('mousedown-on-row', this._rowNumber);
+            },
+            _mouseleaveOnRow: function () {
+                this.emit('mouseleave-on-row', this._rowNumber);
+            },
+            _dragstartOnRow: function () {
+                this.emit('dragstart-on-row', this._rowNumber);
             }
 
         }, {
@@ -248,6 +255,16 @@ modules.define(
                 this._liveBind('click', function (e) {
                     this._clickOnRow();
                 });
+                this._liveBind('mousedown', function (e) {
+                    this._mousedownOnRow();
+                });
+                this._liveBind('mouseleave', function (e) {
+                    this._mouseleaveOnRow();
+                });
+                this._liveBind('dragstart', function (e) {
+                    this._dragstartOnRow();
+                });
+
             },
 
             getBlockName: function () {

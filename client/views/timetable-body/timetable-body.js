@@ -1,6 +1,6 @@
 modules.define(
     'timetable-body',
-    [   'inherit',
+    ['inherit',
         'block',
         'timetable-row',
         'timetable-row-detailed'],
@@ -25,7 +25,7 @@ modules.define(
                 // УДАЛИТЬ
 
 
-                var number = Math.floor(Math.random()*900) + 100;
+                var number = Math.floor(Math.random() * 900) + 100;
                 var d = new Date();
                 var type = 'Airbus A321';
 
@@ -37,12 +37,12 @@ modules.define(
                             view: 'light',
                             rowNumber: i,
                             flightNumber: 'SU ' + number + i,
-                            planTime: d.getHours().toString() + ':' + (Number(d.getMinutes())+i).toString(),
+                            planTime: d.getHours().toString() + ':' + (Number(d.getMinutes()) + i).toString(),
                             aircraftType: type,
                             companyLogo: 'Aloha',
                             companyName: 'British Airways',
                             flightStatus: 'Canceled',
-                            realTime: d.getHours().toString() + ':' + (Number(d.getMinutes())+i+1).toString(),
+                            realTime: d.getHours().toString() + ':' + (Number(d.getMinutes()) + i + 1).toString(),
                             note: 'Gate 5'
                         }));
                         this._rowsD.push(new TimetableRowDetailed({
@@ -56,12 +56,12 @@ modules.define(
                             view: 'dark',
                             rowNumber: i,
                             flightNumber: 'SU ' + number + i,
-                            planTime: d.getHours().toString() + ':' + (Number(d.getMinutes())+i).toString(),
+                            planTime: d.getHours().toString() + ':' + (Number(d.getMinutes()) + i).toString(),
                             aircraftType: type,
                             companyLogo: 'Aloha',
                             companyName: 'British Airways',
                             flightStatus: 'Canceled',
-                            realTime: d.getHours().toString() + ':' + (Number(d.getMinutes())+i+1).toString(),
+                            realTime: d.getHours().toString() + ':' + (Number(d.getMinutes()) + i + 1).toString(),
                             note: 'Gate 5'
                         }));
                         this._rowsD.push(new TimetableRowDetailed({
@@ -84,12 +84,16 @@ modules.define(
                             row[cell].on('mouseout-cell', this._removeHoverAllCells, this);
                         }
                     }
+                    row.on('click-on-row', this._clickOnRow, this);
+                    row.on('mousedown-on-row', this._mousedownOnRow, this);
+                    row.on('mouseup-on-row', this._mouseupOnRow, this);
                 }.bind(this));
 
                 // Слушаем событие: клик по строке
 
                 this._rows.forEach(function (row) {
-                    row.on('click-on-row', this._clickOnRow, this);
+                    //row.on('click-on-row', this._clickOnRow, this);
+
                 }.bind(this));
 
             },
@@ -121,10 +125,32 @@ modules.define(
             _clickOnRow: function (e) {
                 if (!this._rowsD[e.data]._getState('visible')) {
                     this._rowsD[e.data]._setState('visible');
-                    //this._rowsD[e.data].slideToggle('slow');
+                    this._rows[e.data]._setState('clicked');
                 } else {
                     this._rowsD[e.data]._removeState('visible');
+                    this._rows[e.data]._removeState('clicked');
+                }
+            },
 
+            // Имитируем поведение кнопки
+
+            _mousedownOnRow: function (e) {
+                if (!this._rows[e.data]._getState('pushed')) {
+                    this._rows[e.data]._setState('pushed');
+
+                    // Защита от смены состояния при уходе со строки
+
+                    var _row = this._rows[e.data];
+                    _row.on('mouseleave-on-row', function () {
+                        if (_row._getState('pushed')) {
+                            _row._removeState('pushed')
+                        }
+                    });
+                    _row.on('dragstart-on-row', function () {
+                        if (_row._getState('pushed')) {
+                            _row._removeState('pushed')
+                        }
+                    });
                 }
             }
 

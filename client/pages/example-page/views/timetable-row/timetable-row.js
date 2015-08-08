@@ -110,7 +110,7 @@ modules.define(
                 this._cellFlightNumber = new TimetableCellFlightNumber({
                     parentNode: rowDomNode,
                     _nameOfCell: '_cellFlightNumber',
-                    text: 'Flight Number',
+                    text: this.dataFlightNumber,
                     dataCompanyLogo: this.dataCompanyLogo,
                     dataCompanyName: this.dataCompanyName
                 });
@@ -153,13 +153,20 @@ modules.define(
                 }
 
                 // Создаём ячейку: Тип воздушного судна
-
-                this._cellAircraftType = new TimetableCellAircraftType({
-                    parentNode: rowDomNode,
-                    _nameOfCell: '_cellAircraftType',
-                    text: 'Aircraft Type'
-                });
-
+                if (this._view == 'header') {
+                    this._cellAircraftType = new TimetableCellAircraftType({
+                        view: 'header',
+                        parentNode: rowDomNode,
+                        _nameOfCell: '_cellAircraftType',
+                        text: 'Тип самолёта'
+                    });
+                } else {
+                    this._cellAircraftType = new TimetableCellAircraftType({
+                        parentNode: rowDomNode,
+                        _nameOfCell: '_cellAircraftType',
+                        text: this.dataAircraftType
+                    });
+                }
                 // Создаём ячейку: Назначение
 
                 if (this._view == 'header') {
@@ -203,7 +210,7 @@ modules.define(
                         _nameOfCell: '_cellActualInfo',
                         dataFlightStatus: this.dataFlightStatus,
                         dataRealTime: this.dataRealTime,
-                        dataNote: this.dataNote
+                        dataNote: 'Стойка: 12'
                     });
                 }
                 // Создаём ячейку: Актуальное время
@@ -212,7 +219,7 @@ modules.define(
                     this._cellActualTime = new TimetableCellActualTime({
                         view: 'header',
                         parentNode: rowDomNode,
-                        text: 'Время реальное'
+                        text: 'Время фактическое'
                     });
                 } else {
                     this._cellActualTime = new TimetableCellActualTime({
@@ -228,13 +235,13 @@ modules.define(
                         parentNode: rowDomNode,
                         view: 'header',
                         _nameOfCell: '_cellFlightNote',
-                        text: 'Note'
+                        text: 'Примечание'
                     });
                 } else {
                     this._cellFlightNote = new TimetableCellFlightNote({
                         parentNode: rowDomNode,
                         _nameOfCell: '_cellFlightNote',
-                        text: 'Note'
+                        text: 'Стойка: 12 Выход: 23'
                     });
                 }
                 // Рендеримся

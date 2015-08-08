@@ -10,6 +10,10 @@
     width: 30%;
     background-clip: padding-box;
 
+    &__flight-status {
+        margin-top : 2px;
+    }
+
     &._hover {
         background: rgba(224, 224, 224, 0.75) none repeat scroll 0 0;
 
@@ -17,19 +21,25 @@
 
     &._canceled &__flight-status {
         display: inline;
-        background-color: darkred;
+        position:relative;
+        top : 1px;
+        background-color: rgba(139, 0, 0, 0.9);
         color: white;
     }
 
     &._delayed &__flight-status {
         display: inline;
-        background-color: #a5a500;
+        position:relative;
+        top : 1px;
+        background-color: rgba(165, 165, 0, 0.91);
         color: white;
     }
 
     &._arrival &__flight-status {
         display: inline;
-        background-color: darkgreen;
+        position:relative;
+        top : 1px;
+        background-color: rgba(0, 100, 0, 0.91);
         color: white;
     }
 
@@ -55,7 +65,10 @@
 @media only screen and (min-width: 601px) {
     //and (max-width: 800px) {
     .timetable-cell-actual-info {
-        //outline: 1px solid #8ad0ff;
+
+        &__real-time {
+            display: none;
+        }
 
     }
 }
@@ -63,14 +76,14 @@
 @media only screen and (min-width: 801px) {
     //and (max-width: 1000px) {
     .timetable-cell-actual-info {
-        width: 20em;
-        outline: 1px solid #b7ff3f;
+        //width: 20em;
+        //outline: 1px solid #b7ff3f;
 
     }
 }
 
 @media only screen and (min-width: 1001px) {
     .timetable-cell-actual-info {
-        outline: 1px solid #58b6ff;
+        //outline: 1px solid #58b6ff;
     }
 }

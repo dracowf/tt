@@ -33,8 +33,7 @@
     "enb": {
         "sources": [
             "client/controllers",
-            "client/core",
-            "client/views"
+            "client/core"
         ],
         "profiles": {
             "index-page": {

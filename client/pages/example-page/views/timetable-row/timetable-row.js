@@ -138,12 +138,19 @@ modules.define(
                 }
 
                 // Создаём ячейку: Плановое время
-
-                this._cellFlightPlanTime = new TimetableCellFlightPlanTime({
-                    parentNode: rowDomNode,
-                    _nameOfCell: '_cellFlightPlanTime',
-                    text: 'Plan Time'
-                });
+                if (this._view == 'header') {
+                    this._cellFlightPlanTime = new TimetableCellFlightPlanTime({
+                        view: 'header',
+                        parentNode: rowDomNode,
+                        text: 'Время плановое'
+                    });
+                } else {
+                    this._cellFlightPlanTime = new TimetableCellFlightPlanTime({
+                        parentNode: rowDomNode,
+                        _nameOfCell: '_cellFlightPlanTime',
+                        text: this.dataPlanTime
+                    });
+                }
 
                 // Создаём ячейку: Тип воздушного судна
 
@@ -201,11 +208,19 @@ modules.define(
                 }
                 // Создаём ячейку: Актуальное время
 
-                this._cellActualTime = new TimetableCellActualTime({
-                    parentNode: rowDomNode,
-                    _nameOfCell: '_cellActualTime',
-                    text: 'Actual Time'
-                });
+                if (this._view == 'header') {
+                    this._cellActualTime = new TimetableCellActualTime({
+                        view: 'header',
+                        parentNode: rowDomNode,
+                        text: 'Время реальное'
+                    });
+                } else {
+                    this._cellActualTime = new TimetableCellActualTime({
+                        parentNode: rowDomNode,
+                        _nameOfCell: '_cellActualTime',
+                        text: this.dataRealTime
+                    });
+                }
 
                 // Создаём ячейку: Примечание
                 if (this._view == 'header') {

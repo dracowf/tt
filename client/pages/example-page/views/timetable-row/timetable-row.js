@@ -3,9 +3,6 @@ modules.define(
     ['inherit',
         'block',
         'timetable-cell',
-        'timetable-cell-header-airline-company',
-        'timetable-cell-header-general-info',
-        'timetable-cell-header-actual-info',
         'timetable-cell-airline-company',
         'timetable-cell-general-info',
         'timetable-cell-actual-info',
@@ -21,9 +18,6 @@ modules.define(
               inherit,
               YBlock,
               TimetableCell,
-              TimetableCellHeaderAirlineCompany,
-              TimetableCellHeaderGeneralInfo,
-              TimetableCellHeaderActualInfo,
               TimetableCellAirlineCompany,
               TimetableCellGeneralInfo,
               TimetableCellActualInfo,
@@ -291,7 +285,7 @@ modules.define(
 
             getBlockName: function () {
                 return 'timetable-row';
-            },
+            }
 
         });
 

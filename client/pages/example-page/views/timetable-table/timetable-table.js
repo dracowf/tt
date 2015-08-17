@@ -14,9 +14,6 @@ modules.define(
 
                 this._thisDomNode = this.getDomNode();
 
-                // здесь описываем то, что происходит сразу после создания инстанса класса
-
-
                 // Создаем шапку
 
                 this._header = new TimetableHeader({
@@ -55,13 +52,11 @@ modules.define(
                 }
             }
 
-            // инстанс-методы
         }, {
             getBlockName: function () {
                 return 'timetable-table';
             }
 
-            // статические методы
         });
 
         provide(TimetableTable);

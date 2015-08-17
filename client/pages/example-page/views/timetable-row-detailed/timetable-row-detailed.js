@@ -47,7 +47,6 @@ modules.define(
                 return 'timetable-row-detailed';
             }
 
-            // статические методы
         });
 
         provide(TimetableRowDetailed);

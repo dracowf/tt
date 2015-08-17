@@ -24,7 +24,6 @@ modules.define(
 
                 // УДАЛИТЬ
 
-
                 var number = Math.floor(Math.random() * 900) + 100;
                 var d = new Date();
                 var type = 'Airbus A321';
@@ -175,7 +174,6 @@ modules.define(
                 return 'timetable-body';
             }
 
-            // статические методы
         });
 
         provide(TimetableBody);

@@ -17,7 +17,6 @@ module.exports = function (pages) {
                 {
                     block: 'layout-view'
                 }
-                // здесь ваши блоки
             ]
         };
     });

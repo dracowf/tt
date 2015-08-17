@@ -37,7 +37,6 @@ modules.define(
 
                 this._bindTo($(window), 'scroll', this._headerOnTop);
 
-                // здесь описываем то, что происходит сразу после создания инстанса класса
             },
 
             _render: function () {
@@ -60,13 +59,11 @@ modules.define(
                 }
             },
 
-            // инстанс-методы
         }, {
             getBlockName: function () {
                 return 'timetable-header';
             }
 
-            // статические методы
         });
 
         provide(TimetableHeader);

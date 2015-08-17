@@ -8,16 +8,13 @@ modules.define(
 
 
 
-                // здесь описываем то, что происходит сразу после создания инстанса класса
             }
 
-            // инстанс-методы
         }, {
             getBlockName: function () {
                 return 'timetable-control-panel';
             }
 
-            // статические методы
         });
 
         provide(TimetableControlPanel);
